@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Website Template</title>
+
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Class Web">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="Images/icon-192.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="is-home">
+
+    <nav class="navbar-pill">
+        <div class="nav-indicator"></div> 
+        <a href="YOUR_DISCORD_LINK" target="_blank" class="discord-btn"><i class="fab fa-discord"></i> Discord</a>
+        <button id="theme-toggle" class="theme-toggle-btn" title="Toggle theme"><i class="fas fa-sun"></i></button>
+    </nav>
+
+    <div class="hero-content">
+        <h1>Class Name</h1>
+        <p class="subtitle">Welcome to our class dashboard</p>
+
+        <button id="actions-toggle-btn" class="actions-toggle-btn" title="Show links"><i class="fas fa-bars"></i></button>
+
+        <div class="action-boxes-container" id="action-boxes">
+            <a href="YOUR_SCHOOL_SYSTEM_LINK" class="action-box">
+                <i class="fas fa-graduation-cap box-icon" style="color: #00b4db;"></i>
+                <span class="box-title">School System</span>
+            </a>
+            <a href="https://classroom.google.com" class="action-box">
+                <i class="fas fa-chalkboard-user box-icon" style="color: #38ef7d;"></i>
+                <span class="box-title">Classroom</span>
+            </a>
+            <a href="YOUR_NOTES_LINK" class="action-box">
+                <i class="fas fa-folder-open box-icon" style="color: #4285F4;"></i>
+                <span class="box-title">Notes</span>
+            </a>
+            <a href="YOUR_GALLERY_LINK" class="action-box">
+                <i class="fas fa-images box-icon" style="color: #fd79a8;"></i>
+                <span class="box-title">Gallery</span>
+            </a>
+        </div>
+        
+        <div class="tables-container">
+            <div class="schedule-table-wrapper">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Class Duty</th>
+                        </tr>
+                    </thead>
+                    <tbody id="service-body">
+                        <tr><td colspan="2" class="loading-td">Loading schedule...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="schedule-table-wrapper">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Upcoming tests</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tests-body">
+                        <tr><td colspan="2" class="loading-td">Loading tests...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('PWA Service Worker running!', reg))
+                    .catch(err => console.error('PWA Error:', err));
+            });
+        }
+    </script>
+</body>
+</html>
