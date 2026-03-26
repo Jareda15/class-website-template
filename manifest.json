@@ -1,12 +1,14 @@
 {
   "name": "Class Website Template",
-  "short_name": "Class Web",
-  "description": "Your ultimate class dashboard",
-  "start_url": "/",
+  "short_name": "ClassWeb",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#1a1a1a",
   "theme_color": "#1a1a1a",
   "orientation": "portrait-primary",
+  "scope": "./",
+  "lang": "en-US",
+  "description": "Our Official Class Website. A centralized hub for links, notes, and photos.",
   "icons": [
     {
       "src": "Images/icon-192.png",
