@@ -1,0 +1,24 @@
+{
+  "name": "class-website-template",
+  "version": "1.0.0",
+  "description": "An open-source, customizable website template for a school class.",
+  "main": "index.js",
+  "dependencies": {
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "wrangler": "^3.4.0"
+  },
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "pwa",
+    "class",
+    "school",
+    "template"
+  ],
+  "author": "Open Source Community",
+  "license": "MIT"
+}

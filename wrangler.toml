@@ -1,0 +1,18 @@
+name = "class-push-worker"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = [ "nodejs_compat" ]
+
+[[kv_namespaces]]
+binding = "SUBSCRIPTIONS"
+# ZDE SI UŽIVATEL MUSÍ ZADAT VLASTNÍ ID KV NAMESPACE
+id = "YOUR_KV_NAMESPACE_ID_HERE"
+
+[vars]
+VAPID_SUBJECT = "mailto:admin@example.com"
+VAPID_PUBLIC_KEY = "YOUR_PUBLIC_VAPID_KEY_HERE"
+# VAPID_PRIVATE_KEY should be stored securely as a Cloudflare Secret (wrangler secret put VAPID_PRIVATE_KEY)
+# ADMIN_SECRET should be stored securely as a Cloudflare Secret for the /api/test-push endpoint
+
+[triggers]
+crons = ["0 17 * * *"] # Runs every day at 17:00 UTC
